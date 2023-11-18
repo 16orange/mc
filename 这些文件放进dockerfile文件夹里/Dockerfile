@@ -2,29 +2,29 @@ FROM ubuntu
 
 MAINTAINER c <orange_16@foxmail.com>
 
-# ÉèÖÃÊ±ÇøÎªÌ¨±±
+# è®¾ç½®æ—¶åŒºä¸ºå°åŒ—
 RUN ln -snf /usr/share/zoneinfo/Asia/Taipei /etc/localtime && echo Asia/Taipei > /etc/timezone
 
-# °²×°Èí¼ş
+# å®‰è£…javaç­‰è½¯ä»¶
 RUN apt-get update && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends screen procps openssh-server vim openjdk-19-jdk ntp locales-all && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends screen procps openssh-server vim openjdk-19-jdk ntp locales-all language-pack-zh-hans && \
     apt-get upgrade -y && \
     rm -rf /var/lib/apt/lists/*
 
-#´´½¨rsa¹«Ô¿
+#åˆ›å»ºrsaå…¬é’¥
 RUN mkdir -p /root/.ssh && chmod 700 /root/.ssh
-RUN echo "Õ³Ìù¹«Ô¿µ½´Ë´¦" > /root/.ssh/authorized_keys
+RUN echo "ç²˜è´´å…¬é’¥åˆ°æ­¤å¤„" > /root/.ssh/authorized_keys
 RUN chmod 600 /root/.ssh/authorized_keys
 
-# ĞŞ¸ÄsshÅäÖÃÎÄ¼ş
+# ä¿®æ”¹sshé…ç½®æ–‡ä»¶
 RUN echo '\n\
 Port 11453\n\
 PubkeyAuthentication yes\n\
 PasswordAuthentication no\n\
 PermitRootLogin yes' >> /etc/ssh/sshd_config
 
-# ÉèÖÃÏµÍ³ÓïÑÔÎªÖĞÎÄ
-ENV LANG=zh_CN.UTF-8 LANGUAGE=zh_CN:zh LC_ALL=zh_CN.UTF-8
+# è®¾ç½®ç³»ç»Ÿè¯­è¨€ä¸ºä¸­æ–‡
+RUN echo "export LC_ALL=zh_CN.UTF-8" >> /etc/profile
 
-# ¿ª»ú×Ô¶¯ÔËĞĞ
+# å¼€æœºè‡ªåŠ¨è¿è¡Œ
 CMD ["/bin/bash", "start.sh"]
