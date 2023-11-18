@@ -13,4 +13,8 @@
 记得检查每一个文件内的路径是否正确，并且只能有一个容器名称为mc的容器存在
 <br>
 <br>
+ssh链接容器, 输入`screen -r mc`可以进入服务器会话
+<br>
+<br>
+<br>
 联系邮件: orange_16@foxmail.com
