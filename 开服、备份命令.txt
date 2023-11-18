@@ -6,7 +6,7 @@ cd /opt/docker/DockerFiles
 sh kai_mc.sh
 
 ------------------------备份---------------------------------
-先把backup.sh文件放在/mnt/sdc1/BKXZ/GAME/MC/MCserver
+#先把backup.sh文件放在/mnt/sdc1/BKXZ/GAME/MC/MCserver
 
 #手动备份一次
 sh /mnt/sdc1/BKXZ/GAME/MC/MCserver/backup.sh
