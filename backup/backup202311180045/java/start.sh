@@ -1,20 +1,19 @@
 #!/bin/bash
 
-#¿ªssh
+#å¼€ssh
 /etc/init.d/ssh start
 
-#Çå³ıÎŞÓÃscreen
+#æ¸…é™¤æ— ç”¨screen
 screen -wipe
 
-#¿ª·ş
+#åˆ›å»ºåä¸ºmcçš„screençª—å£, å¹¶åœ¨è¯¥çª—å£å¯åŠ¨æœåŠ¡å™¨
 /usr/bin/screen -dmS mc
 /usr/bin/screen -S mc -X stuff "java -Xmx5G -Xms2G -jar paper.jar nogui\n"
 
-#¼ì²â·şÎñÆ÷ÊÇ·ñÔËĞĞ£¬·ñÔòÖØÆô
+#æ£€æµ‹æœåŠ¡å™¨æ˜¯å¦è¿è¡Œï¼Œå¦åˆ™é‡å¯
 while true; do
   sleep 10
   if ! pgrep -f java; then
     exit 1
   fi
 done
-
