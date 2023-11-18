@@ -20,3 +20,6 @@ crontab -e
 0 0 * * 0 sh /mnt/sdc1/BKXZ/GAME/MC/MCserver/backup.sh
 #重启cron服务
 service cron restart
+
+------------------------提醒---------------------------------
+#第一次用可以先看看 "README.md" 文件内的注意事项
