@@ -1,6 +1,6 @@
 #联系邮件: orange_16@foxmail.com
 
-#本范例可以自部署mc服务器到docker，宿主机的linux版本为openwrt
+#本范例可以自动部署mc服务器到docker，宿主机的linux版本为openwrt
 
 #实现了启动自动开服，检测到服务器意外关闭能自动重启，并且还能自动备份存档，并且删除3个最新之外的旧备份。
 
