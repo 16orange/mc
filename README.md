@@ -1,4 +1,3 @@
-#署名: c
 #联系邮件: orange_16@foxmail.com
 
 #本范例可以自部署mc服务器到docker，宿主机的linux版本为openwrt
