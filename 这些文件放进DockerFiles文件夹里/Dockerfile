@@ -25,6 +25,8 @@ PermitRootLogin yes' >> /etc/ssh/sshd_config
 
 # 设置系统语言为中文
 RUN locale-gen zh_CN.UTF-8
+RUN echo "export LC_ALL=zh_CN.UTF-8" >> /etc/profile
+ENV LANG C.UTF-8
 
 # 开机自动运行
 CMD ["/bin/bash", "start.sh"]
