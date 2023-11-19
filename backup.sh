@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# 获取第一个容器的ID
-CONTAINER_ID=$(docker ps | awk 'NR==2 {print $1}')
+# 获取名称为mc容器的ID
+CONTAINER_ID=$(docker ps -f "name=mc" --format "{{.ID}}")
 
 # 定义备份目录
 BACKUP_DIR="/mnt/sdc1/BKXZ/GAME/MC/MCserver/backup"
