@@ -10,7 +10,7 @@ BACKUP_DIR="/mnt/sdc1/BKXZ/GAME/MC/MCserver/backup"
 DATE=$(date +%Y%m%d%H%M)
 
 # 从容器中复制文件
-docker cp $CONTAINER_ID:/home/* $BACKUP_DIR/backup$DATE
+docker cp $CONTAINER_ID:/home $BACKUP_DIR/backup$DATE
 
 # 删除3个最新之外的旧备份
 BACKUP_FILES=$(ls -tr $BACKUP_DIR | head -n -3)
