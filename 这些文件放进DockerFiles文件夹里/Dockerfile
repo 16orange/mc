@@ -18,7 +18,7 @@ RUN chmod 600 /root/.ssh/authorized_keys
 
 # 修改ssh配置文件
 RUN echo '\n\
-Port 11453\n\
+Port 11451\n\
 PubkeyAuthentication yes\n\
 PasswordAuthentication no\n\
 PermitRootLogin yes' >> /etc/ssh/sshd_config
